@@ -1,0 +1,17 @@
+# Node modules
+node_modules/
+
+# Bower components
+bower_components/
+
+# Archivos de producción
+dist/
+
+# Archivos del SO
+.DS_Store
+
+# Python
+*.py*
+
+# DB
+db/
