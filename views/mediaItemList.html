@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Poster</th>
+            <th>Title</th>
+            <th>Upload</th>
+            <th>
+                <input type="search" ng-model="query.title" placeholder="Search..." class="form-control">
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in model | filter:query">
+            <td>
+                <img ng-src="{{::item.poster_url}}" alt="{{::item.title}}'s poster" title="{{::item.title}}" style="width:100px">
+            </td>
+            <td>
+                {{::item.title}}
+            </td>
+            <td>                
+                {{::item.release_date | date:"dd/MM/yyyy"}}
+                <br>
+                ({{::item.release_date | ago}})
+            </td>
+            <td>
+                <a href="#{{::getDetailUrl({ stuff: item })}}" class="btn btn-default">Rent</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
