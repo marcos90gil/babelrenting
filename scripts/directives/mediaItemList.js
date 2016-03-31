@@ -7,7 +7,7 @@ angular.module('babelrenting').directive('mediaItemList',
 				getDetailUrl: '&',
 				dateMode: '@'
 			},
-			templeteUrl: 'views/mediaItemList.html'
+			templateUrl: 'views/mediaItemList.html'
 		};
 	}
 );

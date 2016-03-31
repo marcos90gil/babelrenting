@@ -17,10 +17,9 @@
             <td>
                 {{::item.title}}
             </td>
-            <td>                
+            <td>
                 {{::item.release_date | date:"dd/MM/yyyy"}}
                 <br>
-                ({{::item.release_date | ago}})
             </td>
             <td>
                 <a href="#{{::getDetailUrl({ stuff: item })}}" class="btn btn-default">Rent</a>
