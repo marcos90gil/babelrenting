@@ -13,14 +13,18 @@ angular.module('babelrenting').controller('MoviesListController',
         };
 
         // Controller start
+        var user = APIClient.takeUser;
+        $log.log(user);
         APIClient.getMovies().then(
         	//resolved promise
         	function(data) {        	
-        		$scope.model = data;
-        		if ($scope.model.length === 0) {
-        			$scope.uiState = 'blank';
-        		} else {
-        			$scope.uiState = 'ideal';
+                var movies = data;
+                if (movies.length === 0) {
+                    $scope.uiState = 'blank';
+                } else {
+                    
+                    $scope.model = movies;
+                    $scope.uiState = 'ideal';
         		}
         	},
         	//rejected promise

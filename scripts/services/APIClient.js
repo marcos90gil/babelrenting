@@ -5,15 +5,16 @@ angular.module('babelrenting').service('APIClient', ["$window",'$http', '$q', 'a
         this.saveUser = function(user) {
         	console.log("Estoy en el servicio accediendo a saveUser con el name", user.username);
             $window.localStorage.setItem("username", user.username);
-        }
+        };
 
         this.takeUser = function() {
-            return $window.localStorage.getItem("username");
-        }
+            var user = $window.localStorage.getItem("username");
+            return user;
+        };
 
         this.clearUser = function() {
             $window.localStorage.setItem("username", "");
-        }
+        };
 
         this.apiRequest = function(url) {
 
