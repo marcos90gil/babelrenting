@@ -4,10 +4,8 @@ angular.module('babelrenting').controller('AppController',
 		var controller = this;
 		// Controller properties
 		controller.titles = {};
-		controller.titles[paths.url.movies] = paths.titles.movies;
-		controller.titles[paths.url.moviesRent] = paths.titles.moviesRent;
-		controller.titles[paths.url.moviesShared] = paths.titles.moviesShared;
-		
+		controller.titles[paths.url.home] = paths.titles.home;		
+		controller.titles[paths.url.movies] = paths.titles.movies;		
 
 	    //Scope init
 	    $scope.model = {
