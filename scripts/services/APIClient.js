@@ -1,10 +1,14 @@
-angular.module('babelrenting').service('APIClient', ["$window",'$http', '$q', 'apiPaths', 'URL',
+angular.module('babelrenting').service('APIClient', ["$window", '$http', '$q', 'apiPaths', 'URL',
     function($window, $http, $q, apiPaths, URL) {
 
+        this.getDate = function($scope) {
+            $scope.date = new Date();
+            return $scope.date;
+        }
 
         this.saveUser = function(user) {
-        	console.log("Estoy en el servicio accediendo a saveUser con el name", user.username);
-           	$window.localStorage.setItem("username", user.username);
+            console.log("Estoy en el servicio accediendo a saveUser con el name", user.username);
+            $window.localStorage.setItem("username", user.username);
         };
 
         this.takeUser = function() {
