@@ -1,5 +1,5 @@
 angular.module("babelrenting").constant("paths", {
-   
+
     url: {
 	    home: "/",
 	    movies: "/movies",
@@ -7,13 +7,13 @@ angular.module("babelrenting").constant("paths", {
 	    movieDetail: "/movies/:id",
 	    notFound: "/sorry"
     },
-    
+
     titles: {
     	home: "Babel Renting",
 	    movies: "Movies",
 	    movieNew: "Save Movie",
 	    movieDetail: "Info",
-	    notFound: "Sorry not found"	
+	    notFound: "Sorry not found"
     }
 });
 
