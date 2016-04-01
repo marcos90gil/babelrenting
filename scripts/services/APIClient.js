@@ -79,10 +79,11 @@ angular.module('babelrenting').service('APIClient', ["$window",'$http', '$q', '$
 
         this.rentMovie = function(movie) {
             // deferred object creation
-            var deferred = $q.defer();
+            var deferred = $q.defer(movie);
+            var url = URL.resolve(apiPaths.movieDetail, { id: movie.id });
 
             // async work
-            $http.put(apiPaths.movies, movie)
+            $http.put(url, movie)
                 .then(
                     // ok request
                     function(response) {
