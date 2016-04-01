@@ -4,6 +4,7 @@ angular.module('babelrenting').directive('mediaItem', function() {
 		templateUrl: 'views/mediaItem.html',
 		scope: {
 			model: '=item',
+			user: '=',
 			trustSrc: '&'
 		}
 	};

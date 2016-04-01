@@ -7,6 +7,7 @@ angular.module('babelrenting').controller('MenuController',
             selectedItem: paths.url.movies
         };
         $scope.paths = paths;
+        $scope.user = APIClient.takeUser();
 
         // Scope methods
         $scope.getClassForItem = function(item) {

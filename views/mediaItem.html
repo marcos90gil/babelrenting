@@ -2,6 +2,7 @@
     <div class="row">
         <video type="video/mp4" ng-src="{{::trustSrc({ stuff: model.movie_url })}}" ng-show="model.renter == user" width="600" controls>     
         </video>
+        <br>
         Alquilado por {{model.renter}}
         Usuario {{user}}
     </div>
