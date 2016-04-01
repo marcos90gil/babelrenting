@@ -1,11 +1,12 @@
 angular.module('babelrenting').controller('MovieDetailController', 
-	['$scope', '$routeParams', '$location', '$sce', 'APIClient', 'paths', 
-	function($scope, $routeParams, $location, $sce, APIClient, paths){
+	['$scope', '$routeParams', '$location', '$sce', '$log', 'APIClient', 'paths', 
+	function($scope, $routeParams, $location, $sce, $log, APIClient, paths){
 
 		// Scope init
 		$scope.model = {};
 		$scope.uiState = 'loading';
-		
+		$scope.user = APIClient.takeUser();
+		$log.log('Inicializo scope.user en MDC:', $scope.user);
 		// Controller init
 		$scope.$emit('ChangeTitle', 'Loading...');
 		APIClient.getMovie($routeParams.id).then(
@@ -27,4 +28,5 @@ angular.module('babelrenting').controller('MovieDetailController',
             return $sce.trustAsResourceUrl(src);
         };
 
-}]);
+	}]
+);

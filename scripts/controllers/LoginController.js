@@ -8,7 +8,7 @@ angular.module('babelrenting').controller('LoginController',
 
         $scope.saveUsername = function() {
             APIClient.saveUser($scope.model)
-            console.log("Guardado con éxito");
+            console.log("Guardado con éxito desde LoginController");
             $scope.successMessage = "Username saved! ";
             $window.location.href = "#/movies";
         };
