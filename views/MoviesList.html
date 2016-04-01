@@ -1,7 +1,7 @@
 <div ng-controller="MoviesListController">
 	
 	<h1>Movies</h1>
-
+	
 	<div class="jumbotron" ng-show="uiState=='blank'">
 		<p class="lead">No data here</p>
 	</div>
@@ -12,6 +12,6 @@
 
 	<div ng-include="'views/ProgressBar.html'" ng-show="uiState=='loading'"></div>
 
-	<media-item-list items="model" get-detail-url="getMovieDetailURL(stuff)" ng-show="uiState=='ideal'"></media-item-list>
+	<media-item-list items="model" get-detail-url="getMovieDetailURL(stuff)" save-renter="saveRenter(stuff)" ng-show="uiState=='ideal'"></media-item-list>
 
 </div>

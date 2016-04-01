@@ -11,7 +11,17 @@
             <h1>{{::model.title}}</h1>
             <div class="row">
                 <div class="col-xs-6">
-                    Last rented by {{::model.renter}} in {{::model.rent_date | date:"dd/MM/yyyy"}}
+                    <span ng-if="model.renter != null">
+                        Rented by {{::model.renter}} the {{::model.rent_date | date:"dd/MM/yyyy"}}
+                    </span>
+                    <span ng-if="model.renter == null">
+                        <span ng-if="model.rent_date != null">
+                        Last rented the {{::model.rent_date | date:"dd/MM/yyyy"}}
+                        </span>
+                        <span ng-if="model.rent_date == null">
+                        Never rented
+                        </span>
+                    </span>
                 </div>
                 <div class="col-xs-6">
                     <div class="text-right">

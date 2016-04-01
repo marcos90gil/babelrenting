@@ -5,6 +5,7 @@ angular.module('babelrenting').directive('mediaItemList',
 			scope: {
 				model: '=items',
 				getDetailUrl: '&',
+				saveRenter: '&',
 				dateMode: '@'
 			},
 			templateUrl: 'views/mediaItemList.html'

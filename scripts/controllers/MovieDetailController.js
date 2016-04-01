@@ -24,7 +24,6 @@ angular.module('babelrenting').controller('MovieDetailController',
 
 		// Scope method
 		$scope.trustSrc = function(src) {
-            console.log('Trust method', src);
             return $sce.trustAsResourceUrl(src);
         };
 
