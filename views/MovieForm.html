@@ -1,19 +1,19 @@
-<form name="movieForm" novalidate class="form-horizontal" ng-submit="saveMovie()">
+<form name="movieForm" novalidate class="form-horizontal" ng-submit="saveMovie()" ng-controller="MovieFormController">
     <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input type="title" ng-model="model.title" class="form-control" id="exampleInputEmail1" placeholder="Example:Deadpool" required>
+        <label for="exampleInputTitle">Title</label>
+        <input type="title" ng-model="model.title" class="form-control" id="exampleInputTitle" placeholder="Example:Deadpool" required>
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Poster URL</label>
-        <input type="poster_url" ng-model="model.poster_url" class="form-control" id="exampleInputPassword1" placeholder="Example:http://www.googleimages.com/scdf.jpg" required>
+        <label for="exampleInputPoster">Poster URL</label>
+        <input type="poster_url" ng-model="model.poster_url" class="form-control" id="exampleInputPoster" placeholder="Example:http://www.googleimages.com/scdf.jpg" required>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Movie URL</label>
-        <input type="movie_url" ng-model="model.movie_url" class="form-control" id="exampleInputEmail1" placeholder="Example:http://www.applemovies.com/batman.mp4" required>
+        <label for="exampleInputURL">Movie URL</label>
+        <input type="movie_url" ng-model="model.movie_url" class="form-control" id="exampleInputURL" placeholder="Example:http://www.applemovies.com/batman.mp4" required>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Overview</label>
-        <input type="overview" ng-model="model.overview" class="form-control" id="exampleInputEmail1" placeholder="Example:Three years ago, two brothers broght back to the city...">
+        <label for="exampleInputOverview">Overview</label>
+        <input type="overview" ng-model="model.overview" class="form-control" id="exampleInputOverview" placeholder="Example:Three years ago, two brothers broght back to the city...">
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
