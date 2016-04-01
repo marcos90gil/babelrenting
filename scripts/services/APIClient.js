@@ -1,19 +1,23 @@
-angular.module('babelrenting').service('APIClient', ["$window",'$http', '$q', '$filter', 'apiPaths', 'URL',
-    function($window, $http, $q, $filter, apiPaths, URL) {
+angular.module('babelrenting').service('APIClient', ["$window",'$http', '$q', '$filter', '$log', 'apiPaths', 'URL',
+    function($window, $http, $q, $filter, $log, apiPaths, URL) {
 
+        // User logic
         this.saveUser = function(user) {
-            console.log("Estoy en el servicio accediendo a saveUser con el name", user.username);
+            $log.log("Estoy en APIClient accediendo a saveUser con el name", user.username);
             $window.localStorage.setItem("username", user.username);
         };
 
         this.takeUser = function() {
-            return $window.localStorage.getItem("username");
+            var user = $window.localStorage.getItem("username");
+            $log.log("Estoy en APIClient accediendo a takeUser:", user);
+            return user;
         };
 
         this.clearUser = function() {
             $window.localStorage.setItem("username", "");
         };
 
+        // Server request
         this.apiRequest = function(url) {
 
             // deferred object creation
@@ -79,10 +83,11 @@ angular.module('babelrenting').service('APIClient', ["$window",'$http', '$q', '$
 
         this.rentMovie = function(movie) {
             // deferred object creation
-            var deferred = $q.defer();
+            var deferred = $q.defer(movie);
+            var url = URL.resolve(apiPaths.movieDetail, { id: movie.id });
 
             // async work
-            $http.put(apiPaths.movies, movie)
+            $http.put(url, movie)
                 .then(
                     // ok request
                     function(response) {

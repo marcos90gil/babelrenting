@@ -7,7 +7,6 @@ angular.module('babelrenting').controller('AppController', ['$scope', '$location
     controller.titles[paths.url.movies] = paths.titles.movies;
     controller.titles[paths.url.movieNew] = paths.titles.movieNew;
 
-
     //Scope init
     $scope.model = {
         title: ''
